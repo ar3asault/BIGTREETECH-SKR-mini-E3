@@ -407,7 +407,7 @@
  *   998 : Dummy Table that ALWAYS reads 25°C or the temperature defined below.
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
-#define TEMP_SENSOR_0 11
+#define TEMP_SENSOR_0 1
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -415,7 +415,7 @@
 #define TEMP_SENSOR_5 0
 #define TEMP_SENSOR_6 0
 #define TEMP_SENSOR_7 0
-#define TEMP_SENSOR_BED 1
+#define TEMP_SENSOR_BED 5
 #define TEMP_SENSOR_PROBE 0
 #define TEMP_SENSOR_CHAMBER 0
 
@@ -472,8 +472,8 @@
 #define PID_MAX BANG_MAX // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #define PID_K1 0.95      // Smoothing factor within any PID loop
 #if ENABLED(PIDTEMP)
-  //#define PID_EDIT_MENU         // Add PID editing to the "Advanced Settings" menu. (~700 bytes of PROGMEM)
-  //#define PID_AUTOTUNE_MENU     // Add PID auto-tuning to the "Advanced Settings" menu. (~250 bytes of PROGMEM)
+  #define PID_EDIT_MENU         // Add PID editing to the "Advanced Settings" menu. (~700 bytes of PROGMEM)
+  #define PID_AUTOTUNE_MENU     // Add PID auto-tuning to the "Advanced Settings" menu. (~250 bytes of PROGMEM)
   //#define PID_DEBUG             // Sends debug data to the serial port.  Use M303 D to toggle activation.
   //#define PID_OPENLOOP 1        // Puts PID in open loop. M104/M140 sets the output power from 0 to PID_MAX
   //#define SLOW_PWM_HEATERS      // PWM with very low frequency (roughly 0.125Hz=8s) and minimum state time of approximately 1s useful for heaters driven by a relay
@@ -484,9 +484,9 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   // Creality Ender-3
-  #define DEFAULT_Kp 21.73
-  #define DEFAULT_Ki 1.54
-  #define DEFAULT_Kd 76.55
+  #define DEFAULT_Kp 8.79
+  #define DEFAULT_Ki 0.42
+  #define DEFAULT_Kd 45.79
 
 #endif // PIDTEMP
 
